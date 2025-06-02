@@ -1,0 +1,8 @@
+// golang stuffs
+*.sum
+.env
+// typescript stuffs
+frontend/package-lock.json
+logs/
+*.log
+frontend/node_modules

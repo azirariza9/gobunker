@@ -1,0 +1,16 @@
+{
+  "name": "gobunker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vite --host",
+    "ts": "./node_modules/.bin/tsc -w src/*.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
