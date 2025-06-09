@@ -23,15 +23,20 @@ type AuthMiddleware interface {
 
 func (a *authMiddleware) RequireToken(roles ...string) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		var aH authHeader
+		token := c.Query("token")
 
-		err := c.ShouldBindHeader(&aH)
-		if err != nil {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
-			return
+		if token == "" {
+			var aH authHeader
+
+			err := c.ShouldBindHeader(&aH)
+			if err != nil {
+				c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
+				return
+			}
+
+			token = strings.Replace(aH.AuthorizationHeader, "Bearer ", "", 1)
+
 		}
-
-		token := strings.Replace(aH.AuthorizationHeader, "Bearer ", "", 1)
 
 		tokenClaim, err := a.jwtService.VerifyToken(token)
 		if err != nil {
