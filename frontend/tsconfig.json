@@ -5,6 +5,7 @@
     "skipLibCheck": true,
     "target": "es2022",
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
@@ -14,8 +15,13 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     // transpiling to js or some shit
-    "module": "NodeNext",
-    "outDir": "dist",
+    // "module": "NodeNext",
+    // "outDir": "dist",
+    "module": "preserve",
+    "noEmit": true,
+    
+  
+
     //because im running on a dom or some shit
     "lib": ["es2022", "dom", "dom.iterable"]
   }
