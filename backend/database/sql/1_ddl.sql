@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS samples CASCADE;
+-- DROP TABLE IF EXISTS samples CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
 
@@ -9,10 +9,10 @@ CREATE TYPE user_role AS ENUM ('admin', 'user');
 
 
 
-CREATE TABLE samples (
-    id SERIAL PRIMARY KEY,
-    string VARCHAR(255) NOT NULL
-);
+-- CREATE TABLE samples (
+--     id SERIAL PRIMARY KEY,
+--     string VARCHAR(255) NOT NULL
+-- );
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,

@@ -1,5 +1,5 @@
-TRUNCATE TABLE samples RESTART IDENTITY CASCADE;
+TRUNCATE TABLE users RESTART IDENTITY CASCADE;
 
-INSERT INTO samples (string)
+INSERT INTO users (name,email,password,role)
 VALUES 
-    ('sample');
+    ('admin','admin@admin.com','$2a$10$jEpH2uWzBYHaXnEdTgCp2OQsrICXeg.UljLsgV5n3c2Q9lTFa1CHO','admin');
